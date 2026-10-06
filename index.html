@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#f6f1e7" />
-  <meta name="description" content="Good bread. Simple numbers. A little sourdough calculator for your daily loaf, online or off." />
+  <meta name="description" content="Baker’s percentage calculator with sourdough starter accounting and offline support." />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="icon" href="/icons/icon-192.png" type="image/png" />
   <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
@@ -12,30 +12,20 @@
   <link rel="preload" href="/assets/fonts/fraunces.ttf" as="font" type="font/ttf" crossorigin />
   <script src="/install.js" defer></script>
   <script src="/calculator.js" defer></script>
-  <title>Baker’s % · Your daily loaf</title>
+  <title>Baker’s %</title>
 </head>
 <body>
   <div class="page">
     <header class="masthead">
-      <a class="brand" href="/" aria-label="Baker’s percent home">baker’s<span class="brand-percent">%</span><span class="brand-dot">.</span></a>
-      <span class="masthead-note">A LITTLE KITCHEN COMPANION</span>
+      <h1 class="brand">baker’s<span class="brand-percent">%</span></h1>
+      <img class="bread-art" src="/assets/bread-engraving.jpg" width="800" height="533" alt="" fetchpriority="high" />
     </header>
-
     <main>
-      <section class="intro" aria-labelledby="page-title">
-        <div class="intro-copy">
-          <p class="eyebrow">FOR THE DAILY LOAF</p>
-          <h1 id="page-title">Good bread.<br><em>Simple numbers.</em></h1>
-          <p class="intro-note">You bring the starter. We’ll do the math.</p>
-        </div>
-        <img class="bread-art" src="/assets/bread-engraving.jpg" width="800" height="533" alt="" fetchpriority="high" />
-      </section>
-
       <div class="workspace">
         <section class="formula" aria-labelledby="formula-title">
-          <div class="section-heading"><span class="step">01</span><h2 id="formula-title">Your formula</h2><span class="live-note"><span></span> Updates as you type</span></div>
+          <div class="section-heading"><h2 id="formula-title">Formula</h2></div>
           <div class="flour-field">
-            <label for="flour">Total flour <span>including the flour in your starter</span></label>
+            <label for="flour">Total flour <span>including starter flour</span></label>
             <div class="input-wrap flour-input"><input id="flour" type="number" value="500" min="0" step="1" inputmode="decimal" /><span aria-hidden="true">g</span></div>
           </div>
           <div class="input-grid">
@@ -44,28 +34,24 @@
             <div class="field"><label for="starter">Starter weight</label><div class="input-wrap"><input id="starter" type="number" value="100" min="0" step="1" inputmode="decimal" /><span aria-hidden="true">g</span></div></div>
             <div class="field"><label for="starterHydration">Starter hydration</label><div class="input-wrap"><input id="starterHydration" type="number" value="100" min="0" step="0.1" inputmode="decimal" /><span aria-hidden="true">%</span></div></div>
           </div>
-          <p class="field-note">A 100% starter is equal parts flour and water by weight.</p>
         </section>
 
         <section class="recipe" aria-labelledby="recipe-title">
-          <div class="recipe-heading"><span class="step">02</span><span class="eyebrow">YOUR MIXING CARD</span><svg class="loaf-mark" viewBox="0 0 48 32" fill="none" aria-hidden="true"><path d="M5 24C4 12 11 5 24 5s20 7 19 19c-8 5-30 5-38 0Z" stroke="currentColor" stroke-width="1.5"/><path d="m17 11-4 9m13-10-4 10m13-9-4 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <h2 id="recipe-title">Add to your bowl.</h2>
+          <h2 id="recipe-title">To add</h2>
           <div class="ingredients" aria-live="polite" aria-atomic="true">
             <div class="ingredient"><span class="ingredient-label">Flour</span><b id="flourAdd">450 <small>g</small></b></div>
             <div class="ingredient"><span class="ingredient-label">Water</span><b id="waterAdd">300 <small>g</small></b></div>
             <div class="ingredient"><span class="ingredient-label">Salt</span><b id="saltAdd">10 <small>g</small></b></div>
           </div>
-          <p class="starter-addition">Plus <strong id="starterAdd">100 g</strong> of your starter.</p>
+          <div class="starter-addition"><span>Starter</span><strong id="starterAdd">100 g</strong></div>
           <div class="total-row"><span>Total dough</span><b id="doughTotal">860 <small>g</small></b></div>
-          <p class="starter-detail" id="details">Your starter already brings 50 g flour + 50 g water.</p>
           <p class="warning" id="warning" role="status" hidden></p>
-          <div class="recipe-signoff" aria-hidden="true">A little precision. A lot of possibility.</div>
         </section>
       </div>
     </main>
 
     <footer class="footer">
-      <div class="footer-note"><span class="status-dot" aria-hidden="true"></span><span id="offline-status" role="status">A small tool for a good loaf.</span></div>
+      <div class="footer-note"><span class="status-dot" aria-hidden="true"></span><span id="offline-status" role="status"></span></div>
       <div id="install-panel" class="install-panel"><button id="install" type="button">Install app <span aria-hidden="true">↗</span></button><p id="install-help" role="status" aria-live="polite" hidden></p></div>
     </footer>
   </div>

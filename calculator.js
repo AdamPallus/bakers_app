@@ -16,7 +16,6 @@ function calculate() {
   if (invalid) {
     ['flourAdd','waterAdd','saltAdd','doughTotal'].forEach(id => setAmount(id, null));
     $('starterAdd').textContent = '—';
-    $('details').textContent = 'Fill in all five amounts to see your recipe.';
     $('warning').textContent = values.some(v => v < 0) ? 'Use zero or a positive number for each amount.' : '';
     $('warning').hidden = !$('warning').textContent;
     return;
@@ -34,7 +33,6 @@ function calculate() {
   setAmount('saltAdd', saltTotal);
   setAmount('doughTotal', impossible ? null : flourTotal + waterTotal + saltTotal);
   $('starterAdd').textContent = fmt(starterWeight);
-  $('details').textContent = `Your starter already brings ${fmt(starterFlour)} flour + ${fmt(starterWater)} water.`;
   const warnings = [];
   if (flourAdd < -1e-9) warnings.push('Your starter contains more flour than your target. Use less starter or increase total flour.');
   if (waterAdd < -1e-9) warnings.push('Your starter contains more water than this hydration allows. Use less starter or increase hydration.');

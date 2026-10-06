@@ -51,3 +51,8 @@ self-hosted and cached offline. The original loaf app icon is retained.
 
 Artwork source, generation prompt, and font licenses: `assets/ARTWORK.md`.
 The served JPEG is 800px wide; the original generated PNG is retained as source.
+
+The interface intentionally avoids marketing headlines, numbered sections,
+and decorative helper copy: app name, bread illustration, formula, and amounts.
+Only operational clarification is retained. The v3 offline shell includes the
+regular fonts; the earlier italic source remains archived but is not loaded.
