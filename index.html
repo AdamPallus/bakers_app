@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f1115" />
+  <meta name="description" content="A simple, offline-ready sourdough and baker’s percentage calculator." />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  <script src="/pwa.js" defer></script>
   <title>Baker's % Calculator</title>
   <style>
     :root { --bg:#0f1115; --card:#171a21; --text:#eef2ff; --muted:#9aa4b2; --accent:#7dd3fc; --ok:#86efac; --warn:#fca5a5; }
@@ -21,6 +27,11 @@
     .result b{display:block;font-size:1.2rem;color:var(--ok)}
     .small{font-size:.85rem;color:var(--muted)}
     .warn{margin-top:12px;color:var(--warn)}
+    .install-panel{margin-top:20px;border-top:1px solid #2a3040;padding-top:4px}
+    .install-panel p{margin:10px 0 0;font-size:.85rem;line-height:1.5}
+    #install{background:#7dd3fc;color:#0f1115;font-weight:650}
+    button:focus-visible{outline:3px solid #7dd3fc;outline-offset:3px}
+    [hidden]{display:none!important}
     .footer{margin-top:8px;color:var(--muted);font-size:.85rem}
   </style>
 </head>
@@ -64,6 +75,11 @@
 
       <div class="footer" id="details"></div>
       <div class="warn" id="warning"></div>
+      <div class="install-panel" id="install-panel">
+        <button class="btn" id="install" type="button">Install app</button>
+        <p id="install-help" role="status" aria-live="polite">Keep the calculator handy on your home screen.</p>
+      </div>
+      <div class="footer" id="offline-status" role="status"></div>
     </div>
   </div>
 
