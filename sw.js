@@ -1,5 +1,5 @@
-const CACHE = 'bakers-app-v1';
-const ASSETS = ['/', '/index.html', '/pwa.js', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/apple-touch-icon.png'];
+const CACHE = 'bakers-app-v2';
+const ASSETS = ['/', '/index.html', '/install.js', '/style.css', '/calculator.js', '/assets/bread-engraving.jpg', '/assets/fonts/dm-sans.ttf', '/assets/fonts/fraunces.ttf', '/assets/fonts/fraunces-italic.ttf', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/apple-touch-icon.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
 });

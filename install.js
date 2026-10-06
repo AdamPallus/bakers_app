@@ -16,6 +16,7 @@
     help.textContent = 'Install for a home-screen icon and a dedicated app window.';
   });
   button.addEventListener('click', async () => {
+    help.hidden = false;
     if (!installPrompt) {
       const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
